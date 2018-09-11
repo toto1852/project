@@ -59,10 +59,10 @@ public class UsersController {
     return "index";
   }
 
-  @PostMapping("index")
+  /*@PostMapping("index")
     public String sendAddPromo (Model model)
   {
 
-  }
+  }*/
   
 }
