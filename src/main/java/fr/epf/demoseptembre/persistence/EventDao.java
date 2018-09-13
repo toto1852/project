@@ -1,6 +1,6 @@
 package fr.epf.demoseptembre.persistence;
 
-import fr.epf.demoseptembre.models.Promotion;
+import fr.epf.demoseptembre.models.Event;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
  * @author Loïc Ortola on 10/09/2018
  */
 @Repository
-public interface PromotionDao extends CrudRepository<Promotion, Integer> {
+public interface EventDao extends CrudRepository<Event, Integer> {
   
 }

@@ -5,8 +5,9 @@ import fr.epf.demoseptembre.persistence.UserDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+
 
 /**
  * TODO class details.
@@ -32,37 +33,52 @@ public class UsersController {
    * @return
    */
 
-  @GetMapping("/users")
+  //Afficher l'index et la liste des membres
+  @GetMapping("/")
+  public String getIndex(Model model) {
+    model.addAttribute("data", userDao.findAll());
+    return "index";
+  }
+
+  //Afficher la liste des membres (page non utilisée)
+  @GetMapping("/users-list")
   public  String getUsers (Model model) {
     model.addAttribute("data", userDao.findAll());
     return "users-list";
   }
 
+  //Afficher le formulaire d'ajout d'un membre
   @GetMapping("/user")
   public String addUsersPage (Model model) {
-    User usr = new User();
-    model.addAttribute(usr);
-    return "add_member";
+    model.addAttribute("user", new User());
+    return "user";
   }
 
+  // afficher le formulaire de modification d'un membre
+  @GetMapping("/user/modify/{id}")
+  public String modifyUserForm(@PathVariable(value="id") int id, Model model) {
+    model.addAttribute("user", userDao.findById(id));
+    return "user";
+  }
+
+  // afficher le formulaire de suppression d'un membre
+  @GetMapping("/user/delete/{id}")
+  public String deleteUserForm(@PathVariable(value="id") int id, Model model) {
+    model.addAttribute("user", userDao.findById(id));
+    userDao.delete(userDao.findById(id).get());
+    return "redirect:/";
+  }
+
+  //sauvegarde le formulaire de création d'un membre
   @PostMapping("user")
   public String addUsers (Model model, User usr){
     userDao.save(usr);
-
-    return "redirect:/users";
+    return "redirect:/";
   }
 
-  @GetMapping("/index")
-          public String index (Model model)
-  {
 
-    return "index";
-  }
 
-  /*@PostMapping("index")
-    public String sendAddPromo (Model model)
-  {
 
-  }*/
+
   
 }
