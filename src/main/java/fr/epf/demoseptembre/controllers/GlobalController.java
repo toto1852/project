@@ -47,7 +47,6 @@ public class GlobalController {
     model.addAttribute("data1", userDao.findAll());
     model.addAttribute("data2", eventDao.findAll());
     model.addAttribute("data3", promotionDao.findAll());
-    //model.addAttribute("total1", userDao);
     return "index";
   }
 
