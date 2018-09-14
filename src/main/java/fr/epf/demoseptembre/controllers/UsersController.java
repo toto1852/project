@@ -34,11 +34,11 @@ public class UsersController {
    */
 
   //Afficher l'index et la liste des membres
-  @GetMapping("/")
+  /*@GetMapping("/")
   public String getIndex(Model model) {
     model.addAttribute("data", userDao.findAll());
     return "index";
-  }
+  }*/
 
   //Afficher la liste des membres (page non utilisée)
   @GetMapping("/users-list")

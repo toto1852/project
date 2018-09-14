@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:td="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,7 +61,6 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row">
                 <div class="col-lg-4 col-md-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -127,7 +126,6 @@
                             </div>
                         </a>
                     </div>
-                </div>
             </div>
             <!-- /.row -->
             <div class="row">
@@ -152,10 +150,11 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <tr th:each="user : ${data}">
+                                            <tr th:each="user : ${data1}">
                                                 <!--<td th:text="${user.id}"></td> -->
                                                 <td th:text="${user.firstName}"></td>
                                                 <td th:text="${user.lastName}"></td>
+                                                <td th:text="${user.promotion}"></td>
                                                 <td><form action="#" th:action="@{/user/modify/}+${user.id}" th:object="${user.id}" method="get"><input type="submit" class="btn btn-sm btn-warning" value="modifier"/></form></td>
                                                 <td><form action="#" th:action="@{/user/delete/}+${user.id}" th:object="${user.id}" method="get"><input type="submit" class="btn btn-sm btn-danger" value="supprimer"/></form></td>
                                                 <!--
@@ -257,24 +256,40 @@
                             <i class="fa fa-calendar fa-fw"></i> Codes reviews programmées
                         </div>
                         <div class="panel-body">
-                            <table class="table table-striped">
+                            <div class="table-responsive">
+                            <table class="table table-hover table-striped">
+                                <thead>
                                 <tr>
-                                    <td>Code review 1</td>
-                                    <td>Promo Février</td>
-                                    <td class="text-right"><span class="text-muted small">24/02/2017</span></td>
+                                    <th>Nom</th>
+                                    <th>Date</th>
+                                    <th>Promotion</th>
                                 </tr>
-                                <tr>
-                                    <td>Code review 2</td>
-                                    <td>Promo Février</td>
-                                    <td class="text-right"><span class="text-muted small">05/03/2017</span></td>
+                                </thead>
+                                <tbody>
+                                <tr th:each="event : ${data2}">
+                                    <td th:text="${event.name}"></td>
+                                    <td th:text="${event.promotion}"></td>
+                                    <td th:text="${event.date}"></td>
                                 </tr>
-                                <tr>
-                                    <td>Code review 1</td>
-                                    <td>Promo Mars</td>
-                                    <td class="text-right"><span class="text-muted small">10/03/2017</span></td>
-                                </tr>
-                            </table>
-                            <a href="#" class="btn btn-default btn-block">Programmer une code review</a>
+                                </tbody>
+                                <!-- <td>Code review 1</td>
+                                 <td>Promo Février</td>
+                                 <td class="text-right"><span class="text-muted small">24/02/2017</span></td>
+                             </tr>
+                             <tr>
+                                 <td>Code review 2</td>
+                                 <td>Promo Février</td>
+                                 <td class="text-right"><span class="text-muted small">05/03/2017</span></td>
+                             </tr>
+                             <tr>
+                                 <td>Code review 1</td>
+                                 <td>Promo Mars</td>
+                                 <td class="text-right"><span class="text-muted small">10/03/2017</span></td>
+                             </tr>
+                             -->
+                         </table>
+                            </div>
+                            <form href="#" th:action="@{/event}" class="btn btn-default btn-block">Programmer une code review</form>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -286,25 +301,24 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-users fa-fw"></i> Promo Février
-                                    <span class="pull-right text-muted small"><em>8 membres</em>
-                                    </span>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-users fa-fw"></i> Promo Mars
-                                    <span class="pull-right text-muted small"><em>6 membres</em>
-                                    </span>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-users fa-fw"></i> Promo Avril
-                                    <span class="pull-right text-muted small"><em>0 membre</em>
-                                    </span>
-                                </a>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>N° de promotion</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="promotion : ${data3}">
+                                        <td th:text="${promotion.name}"></td>
+                                        <td th:text="${promotion.num}"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                             <!-- /.list-group -->
-                            <a href="#" class="btn btn-default btn-block">Créer une nouvelle promotion</a>
+                            <form href="#" th:action="@{/promotion}" class="btn btn-default btn-block">Créer une nouvelle promotion</form>
                         </div>
                         <!-- /.panel-body -->
                     </div>

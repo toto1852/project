@@ -70,9 +70,14 @@
                                 <div class="col-xs-12">
                                     <form action="#" th:action="@{/promotion}" th:object="${promotion}" method="post">
                                         <div class="form-group">
-                                            <label for="name">Nom</label>
+                                            <label for="name">Nom de promotion</label>
                                             <input type="text" class="input-lg form-control" id="name"
                                                    th:field="*{name}" placeholder="Nom">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="number">Numéro de promotion</label>
+                                            <input type="number" class="input-lg form-control" id="number"
+                                                   th:field="*{num}" placeholder="1999">
                                         </div>
 
                                         <div class="text-right">

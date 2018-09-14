@@ -5,6 +5,6 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
 @Entity
-data class Event(@Id @GeneratedValue var id: Int? =  null, var name: String? = null, var date: String?, var Promotion: String? = null) {
+data class Event(@Id @GeneratedValue var id: Int? =  null, var name: String? = null, var date: String? = null, var promotion: Int? = null) {
 
 }
