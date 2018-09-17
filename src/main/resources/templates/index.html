@@ -69,7 +69,9 @@
                                     <i class="fa fa-users fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">4</div>
+                                    <div class="huge">
+                                        <td th:text="${#lists.size(data3)}">[promotion size]</td>
+                                    </div>
                                     <div class="huge-label">Promotions</div>
                                 </div>
                             </div>
@@ -91,10 +93,9 @@
                                     <i class="fa fa-user fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">46</div>
-                                    <!--<tr th:each="user : ${data1}">
-                                        <td th:count></td>
-                                    </tr>-->
+                                    <div class="huge">
+                                        <td th:text="${#lists.size(data1)}">[user size]</td>
+                                    </div>
                                     <div class="huge-label">Membres inscrits</div>
                                 </div>
                             </div>
@@ -116,7 +117,7 @@
                                     <i class="fa fa-calendar fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">3</div>
+                                    <div class="huge"><td th:text="${#lists.size(data2)}">[event size]</td></div>
                                     <div class="huge-label">Code reviews programmées</div>
                                 </div>
                             </div>
@@ -164,75 +165,7 @@
                                                 <a href="'/user/modify/' + ${user.id}" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Modifier</a>
                                                 <a href="/user/delete/${user.id}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Supprimer</a>
                                             -->
-
                                             </tr>
-
-
-                                            <!--
-                                           <tr>
-                                               <td>Lortola</td>
-                                               <td>lortola@e-biz.fr</td>
-                                               <td>Février</td>
-                                               <td  class="text-right">
-                                                   <a href="#" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Modifier</a>
-                                                   <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Supprimer</a>
-                                               </td>
-                                           </tr>
-                                           <tr>
-                                               <td>Alebel</td>
-                                               <td>alebel@e-biz.fr</td>
-                                               <td>Avril</td>
-                                               <td class="text-right">
-                                                   <a href="#" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Modifier</a>
-                                                   <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Supprimer</a>
-                                               </td>
-                                           </tr>
-                                           <tr>
-                                               <td>Kbottero</td>
-                                               <td>kbottero@e-biz.fr</td>
-                                               <td>Mars</td>
-                                               <td class="text-right">
-                                                   <a href="#" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Modifier</a>
-                                                   <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Supprimer</a>
-                                               </td>
-                                           </tr>
-                                           <tr>
-                                               <td>rlarroque</td>
-                                               <td>rlarroque@e-biz.fr</td>
-                                               <td>Février</td>
-                                               <td class="text-right">
-                                                   <a href="#" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Modifier</a>
-                                                   <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Supprimer</a>
-                                               </td>
-                                           </tr>
-                                           <tr>
-                                               <td>hdelabatte</td>
-                                               <td>hdelabatte@e-biz.fr</td>
-                                               <td>Mars</td>
-                                               <td class="text-right">
-                                                   <a href="#" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Modifier</a>
-                                                   <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Supprimer</a>
-                                               </td>
-                                           </tr>
-                                           <tr>
-                                               <td>gnostrenoff</td>
-                                               <td>gnostrenoff@e-biz.fr</td>
-                                               <td>Mars</td>
-                                               <td class="text-right">
-                                                   <a href="#" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Modifier</a>
-                                                   <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Supprimer</a>
-                                               </td>
-                                           </tr>
-                                           <tr>
-                                               <td>hbernardi</td>
-                                               <td>hbernardi@e-biz.fr</td>
-                                               <td>Avril</td>
-                                               <td class="text-right">
-                                                   <a href="#" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Modifier</a>
-                                                   <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Supprimer</a>
-                                               </td>
-                                           </tr>
-                                           -->
                                             </tbody>
                                         </table>
                                         <div class="text-center">
@@ -275,24 +208,11 @@
                                     <td th:text="${event.date}"></td>
                                 </tr>
                                 </tbody>
-                                <!-- <td>Code review 1</td>
-                                 <td>Promo Février</td>
-                                 <td class="text-right"><span class="text-muted small">24/02/2017</span></td>
-                             </tr>
-                             <tr>
-                                 <td>Code review 2</td>
-                                 <td>Promo Février</td>
-                                 <td class="text-right"><span class="text-muted small">05/03/2017</span></td>
-                             </tr>
-                             <tr>
-                                 <td>Code review 1</td>
-                                 <td>Promo Mars</td>
-                                 <td class="text-right"><span class="text-muted small">10/03/2017</span></td>
-                             </tr>
-                             -->
                          </table>
                             </div>
-                            <form href="#" th:action="@{/event}" class="btn btn-default btn-block">Programmer une code review</form>
+                            <form th:action="@{/event}" method="post">
+                                <input type="button"  value="Programmer une code review" class="btn btn-default btn-block"/>
+                            </form>
                         </div>
                         <!-- /.panel-body -->
                     </div>
