@@ -58,14 +58,15 @@ public class UsersController {
   @GetMapping("/user/modify/{id}")
   public String modifyUserForm(@PathVariable(value="id") int id, Model model) {
     model.addAttribute("user", userDao.findById(id));
-    return "user";
+    userDao.deleteById(id);
+    return "user-modify";
   }
 
   // afficher le formulaire de suppression d'un membre
   @GetMapping("/user/delete/{id}")
   public String deleteUserForm(@PathVariable(value="id") int id, Model model) {
     model.addAttribute("user", userDao.findById(id));
-    userDao.delete(userDao.findById(id).get());
+    userDao.deleteById(id);
     return "redirect:/";
   }
 
