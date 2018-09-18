@@ -82,6 +82,21 @@ public class AdminsController {
     return false;
   }
 
+  // afficher la page de register
+  @GetMapping("/register")
+  public String registerPage (Model model) {
+    model.addAttribute("admin", new Admin());
+    return "register";
+  }
+
+
+  //apres avoir appuyé sur le bouton ok --> register (creer un nouvel admin)
+  @PostMapping("register")
+  public String register (Model model, Admin adm){
+    adminDao.save(adm);
+    return "redirect:/";
+  }
+
 
 
 
