@@ -44,11 +44,14 @@ public class DemoSeptembreApplication {
   @PostConstruct
   public void init() {
     userDao.deleteAll();
+    eventDao.deleteAll();
+    promotionDao.deleteAll();
     adminDao.deleteAll();
     userDao.save(new User(null,"Loic", "Ortola",2019));
     userDao.save(new User(null, "Ambroise", "Soullier",2019));
     userDao.save(new User(null, "Harry", "Covert",2019));
     adminDao.save(new Admin(null, "admin", "mdp"));
-    //eventDao.save(new Event (null, "nom","date",2019));
+    eventDao.save(new Event (null, "nom","date",2019));
+    promotionDao.save(new Promotion(null,"nom",2019));
 }
 }

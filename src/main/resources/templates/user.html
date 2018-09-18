@@ -50,9 +50,19 @@
                                                th:field="*{lastName}" placeholder="Nom">
                                     </div>
                                     <div class="form-group">
-                                        <label for="promotion">Numéro de promotion</label>
-                                        <input type="number" class="input-lg form-control" id="promotion"
-                                               th:field="*{promotion}" placeholder="1999">
+                                        <label for="promotionName">Nom de promotion</label>
+                                        <select class="input-lg form-control" id="promotionName" th:field="*{promotion}" />
+                                        <option th:each="promotion : ${data3}" th:text="${promotion.name}">
+                                        </option>
+                                        </select>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="promotionNum">Numéro de promotion</label>
+                                        <select class="input-lg form-control" id="promotionNum" th:field="*{promotion}" />
+                                        <option th:each="promotion : ${data3}" th:text="${promotion.num}">
+                                        </option>
+                                        </select>
                                     </div>
                                     <div class="text-right">
                                         <button type="submit" class="btn btn-lg btn-primary">Enregistrer</button>
