@@ -63,10 +63,10 @@ public class AdminsController {
   @PostMapping("login")
   public String login (Model model, Admin adm){
     if (isUserConnected(adm)){
-      return "redirect:/";
+      return "redirect:/"; //success
     }
     else{
-      return "login";
+      return "error-login";
     }
   }
 
