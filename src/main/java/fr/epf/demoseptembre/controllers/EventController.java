@@ -16,6 +16,8 @@ public class EventController {
         this.eventDao = eventDao;
     }
 
+
+
     @GetMapping("/event")
     public String addEventPage (Model model) {
         Event evnt = new Event(null,null,null,null);
@@ -27,6 +29,12 @@ public class EventController {
     public String addEvent (Model model, Event evnt){
         eventDao.save(evnt);
         return "redirect:/";
+    }
+
+    @GetMapping("/calendar")
+    public String openCalendar (Model model) {
+        model.addAttribute("data2", eventDao.findAll());
+        return "event";
     }
 
 }
