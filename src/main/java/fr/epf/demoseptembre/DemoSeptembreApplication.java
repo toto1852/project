@@ -1,8 +1,10 @@
 package fr.epf.demoseptembre;
 
+import fr.epf.demoseptembre.models.Admin;
 import fr.epf.demoseptembre.models.User;
 import fr.epf.demoseptembre.models.Event;
 import fr.epf.demoseptembre.models.Promotion;
+import fr.epf.demoseptembre.persistence.AdminDao;
 import fr.epf.demoseptembre.persistence.EventDao;
 import fr.epf.demoseptembre.persistence.UserDao;
 import fr.epf.demoseptembre.persistence.PromotionDao;
@@ -19,8 +21,12 @@ public class DemoSeptembreApplication {
   
   @Autowired
   private UserDao userDao;
+    @Autowired
   private PromotionDao promotionDao;
+    @Autowired
   private EventDao eventDao;
+    @Autowired
+  private AdminDao adminDao;
   
   public static void main(String[] args) {
     // Point d'entrée de l'application.
@@ -38,9 +44,11 @@ public class DemoSeptembreApplication {
   @PostConstruct
   public void init() {
     userDao.deleteAll();
+    adminDao.deleteAll();
     userDao.save(new User(null,"Loic", "Ortola",2019));
     userDao.save(new User(null, "Ambroise", "Soullier",2019));
     userDao.save(new User(null, "Harry", "Covert",2019));
+    adminDao.save(new Admin(null, "admin", "mdp"));
     //eventDao.save(new Event (null, "nom","date",2019));
 }
 }
