@@ -19,7 +19,9 @@ public class DemoSeptembreApplication {
   
   @Autowired
   private UserDao userDao;
+  @Autowired
   private PromotionDao promotionDao;
+  @Autowired
   private EventDao eventDao;
   
   public static void main(String[] args) {
@@ -41,6 +43,6 @@ public class DemoSeptembreApplication {
     userDao.save(new User(null,"Loic", "Ortola",2019));
     userDao.save(new User(null, "Ambroise", "Soullier",2019));
     userDao.save(new User(null, "Harry", "Covert",2019));
-    //eventDao.save(new Event (null, "nom","date",2019));
+    eventDao.save(new Event (null, "nom","date",2019));
 }
 }
