@@ -3,6 +3,7 @@ package fr.epf.demoseptembre.controllers;
 import fr.epf.demoseptembre.models.User;
 import fr.epf.demoseptembre.models.Event;
 import fr.epf.demoseptembre.models.Promotion;
+import fr.epf.demoseptembre.persistence.AdminDao;
 import fr.epf.demoseptembre.persistence.EventDao;
 import fr.epf.demoseptembre.persistence.UserDao;
 import fr.epf.demoseptembre.persistence.PromotionDao;
@@ -24,11 +25,13 @@ public class GlobalController {
   private final UserDao userDao;
   private final EventDao eventDao;
   private final PromotionDao promotionDao;
+  private final AdminDao adminDao;
 
-  public GlobalController(UserDao userDao, EventDao eventDao, PromotionDao promotionDao) {
+  public GlobalController(UserDao userDao, EventDao eventDao, PromotionDao promotionDao, AdminDao adminDao) {
     this.userDao = userDao;
     this.eventDao = eventDao;
     this.promotionDao = promotionDao;
+    this.adminDao = adminDao;
   }
 
   /**

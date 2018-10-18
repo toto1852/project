@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,121 +16,45 @@
     <link href="../css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
 </head>
 
 <body>
+<div id="wrapper">
 
-    <div id="wrapper">
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top container-fluid" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index">When Is My Code Review?</a>
+    <div id="page-wrapper" class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"></h1>
             </div>
-            <!-- /.navbar-header -->
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="text-center">
+                            <i class="fa fa-home fa-fw"></i> Accueil
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <p class="text-center">Bienvenue sur l'accueil</p>
 
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle navlink" data-toggle="dropdown" href="#">
-                        <i class="fa fa-gear fa-fw"></i> Gérer les code reviews <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="promotion"><i class="fa fa-users fa-fw"></i> Ajouter une promotion</a>
-                        </li>
-                        <li><a href="user"><i class="fa fa-user fa-fw"></i> Ajouter un membre</a>
-                        </li>
-                        <li><a href="event"><i class="fa fa-calendar fa-fw"></i> Créer un rendez-vous</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+                        <ul class="list-group">
+                            <p class="text-center">Voici la page d'accueil de notre site pour la gestion des cours et des élèves.
+                                Ce projet a été suppervisé par Takima dans le cadre de la formation EPF pour les élèves de 5eme année spécialisés en informatique. </p>
+                        </ul>
 
-        <div id="page-wrapper" class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Panneau d'administration</h1>
+                        <div class="text-right">
+                            <form action="#" th:action="@{/login}" method="get"><button type="submit" class="btn btn-lg btn-primary">Se connecter</button></form>
+                        </div>
+                    </div>
+
                 </div>
-                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
-                <div class="col-lg-4 col-md-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-users fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">
-                                        <td th:text="${#lists.size(data3)}">[promotion size]</td>
-                                    </div>
-                                    <div class="huge-label">Promotions</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="promotion">
-                            <div class="panel-footer">
-                                <span class="pull-left">Ajouter une promotion</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-user fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">
-                                        <td th:text="${#lists.size(data1)}">[user size]</td>
-                                    </div>
-                                    <div class="huge-label">Membres inscrits</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="user">
-                            <div class="panel-footer">
-                                <span class="pull-left">Ajouter un membre</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-calendar fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge"><td th:text="${#lists.size(data2)}">[event size]</td></div>
-                                    <div class="huge-label">Code reviews programmées</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="event">
-                            <div class="panel-footer">
-                                <span class="pull-left">Ajouter une code review</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-            </div>
+<<<<<<< HEAD
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-8">
@@ -245,26 +169,39 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-4 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /#page-wrapper -->
+=======
+            <div class="col-md-2">
 
+>>>>>>> origin/laurene
+            </div>
+        </div>
     </div>
+<<<<<<< HEAD
     <!-- /#wrapper -->
     <footer class="footer">
         <div class="container">
             <div class="row text-center">
                 <img src="../img/ebusiness.png" class="logo" alt=""> &bullet; 2018
             </div>
+=======
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<footer class="footer">
+    <div class="container">
+        <div class="row text-center">
+            Projet EPF 2018 @Laurene @Guillaume @Nicolas @Yorick
+>>>>>>> origin/laurene
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- jQuery -->
-    <script src="../js/jquery-3.1.1.min.js"></script>
+<!-- jQuery -->
+<script src="../js/jquery-3.1.1.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>
 
 </body>
 

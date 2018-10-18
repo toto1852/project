@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>When Is My Code Review?</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+
+    <div id="page-wrapper" class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"></h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3 class="text-center">
+                            <i class="fa fa-exclamation-triangle fa-fw"></i> Oops:
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <p class="text-center">Votre identifiant et votre mot de passe ne sont pas valides</p>
+
+                        <ul class="list-group">
+                            <p class="text-center">Veuillez ressaisir vos informations</p>
+                        </ul>
+
+                        <div class="text-right">
+                            <form action="#" th:action="@{/login}" method="get"><button type="submit" class="btn btn-lg btn-primary">Retour</button></form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div>
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<footer class="footer">
+    <div class="container">
+        <div class="row text-center">
+            Projet EPF 2018 @Laurene @Guillaume @Nicolas @Yorick
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../js/jquery-3.1.1.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
